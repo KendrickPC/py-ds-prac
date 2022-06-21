@@ -10,3 +10,19 @@ def number_compare(a, b):
         >>> number_compare(1, -2)
         'First is greater'
     """
+    if type(a) != int or type(b) != int:
+        return "Please enter a valid number"
+    if a == b:
+        return "Numbers are equal"
+    elif a > b:
+        return "First is greater"
+    elif a < b:
+        return "Second is greater"
+    else:
+        return "Please enter a valid number for the parameters"
+
+print(number_compare(1, 1))
+print(number_compare(-1, 1))
+print(number_compare(1, -2))
+print(number_compare(1, "hi"))
+print(number_compare("hello", 100))

@@ -7,3 +7,19 @@ def multiple_letter_count(phrase):
         >>> multiple_letter_count('Yay')
         {'Y': 1, 'a': 1, 'y': 1}
     """
+    hash = {}
+    for char in phrase:
+        if hash.get(char) == None:
+            hash[char] = 1
+        else:
+            hash[char] += 1
+    return hash
+    # for char in phrase:
+    #     if hash[char] == None:
+    #         hash[char] = 1
+    #     else:
+    #         hash[char] += 1
+    # return hash
+
+print(multiple_letter_count('yay'))
+print(multiple_letter_count('Yay'))
