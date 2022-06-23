@@ -1,3 +1,5 @@
+# https://www.geeksforgeeks.org/python-convert-two-lists-into-a-dictionary/
+
 def two_list_dictionary(keys, values):
     """Given keys and values, make dictionary of those.
     
@@ -14,4 +16,14 @@ def two_list_dictionary(keys, values):
 
         >>> two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4])
         {'a': 1, 'b': 2, 'c': 3}
-   """
+    """
+    if len(keys) > len(values):
+        results = {keys[i]: values[i] for i in range(len(values))}
+        return results
+    else:
+        results = {keys[i]: values[i] for i in range(len(keys))}
+        return results
+
+print(two_list_dictionary(['x', 'y', 'z'], [9, 8, 7]))
+print(two_list_dictionary(['a', 'b', 'c', 'd'], [1, 2, 3]))
+print(two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4]))

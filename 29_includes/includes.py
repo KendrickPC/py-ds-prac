@@ -1,3 +1,6 @@
+import string
+
+
 def includes(collection, sought, start=None):
     """Is sought in collection, starting at index start?
 
@@ -30,3 +33,29 @@ def includes(collection, sought, start=None):
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+    if isinstance(collection, list) == True:
+        slicedList = collection[start:]
+        return sought in slicedList
+    if isinstance(collection, str) == True:
+        return sought in collection
+    if isinstance(collection, tuple) == True:
+        slicedTuple = collection[start:]
+        return sought in slicedTuple
+    if isinstance(collection, set):
+        return sought in collection
+    if isinstance(collection, dict):
+        return sought in collection.values()
+    return "Please enter a valid data type for collection"
+
+print(includes([1, 2, 3], 1))
+print(includes([1, 2, 3], 1, 2))
+
+print(includes("hello", "o"))
+print(includes("hello", "z"))
+
+print(includes(('Elmo', 5, 'red'), 'red', 1))
+print(includes(('Elmo', 5, 'red'), 'blue', 1))
+
+print(includes({1, 2, 3}, 1))
+print(includes({1, 2, 3}, 1, 3))
+print(includes({"apple": "red", "berry": "blue"}, "blue"))
