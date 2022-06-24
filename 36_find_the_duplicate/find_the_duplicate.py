@@ -13,3 +13,14 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    hash = {}
+    for num in nums:
+        if hash.get(num) == None:
+            hash[num] = True
+        else:
+            return num
+    return None
+
+print(find_the_duplicate([1, 2, 1, 4, 3, 12]))
+print(find_the_duplicate([6, 1, 9, 5, 3, 4, 9]))
+print(find_the_duplicate([2, 1, 3, 4]) is None)

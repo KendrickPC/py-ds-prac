@@ -23,9 +23,32 @@ def is_odd_string(word):
         False
 
     Longer example:
-    
+        1 + 13 + 1 + 26 + 9 + 14 + 7
         >>> is_odd_string('amazing')
         True
     """
-
     # Hint: you may find the ord() function useful here
+    # https://www.w3schools.com/python/ref_func_ord.asp
+    # The ord() function returns the number representing the unicode code of a specified character.
+
+    # Translate everything to lower:
+    # Minus 96:
+    count = 0
+    transformToLower = word.lower()
+    for char in transformToLower:
+        count += ord(char) - 96
+    # print(F"Count: {count}")
+    return count % 2 != 0
+    
+"""
+x = ord("a")
+y = ord("A")
+print(x) # 97
+print(y) # 65
+"""
+
+print(is_odd_string('a'))
+print(is_odd_string('A'))
+print(is_odd_string('aaaa'))
+print(is_odd_string('AAaa'))
+print(is_odd_string('amazing'))
